@@ -44,7 +44,9 @@ def create_order(order: OrderRequest):
             "order_line": [
                 (0, 0, {
                     "product_id": line.product_id,
-                    "product_uom_qty": line.quantity
+                    "product_uom_qty": line.quantity,
+                    "product_uom": 29,  # Pair (1 Pair = 2 Animals) in 'Animals' category
+                    "price_unit": 350000.0  # 175000 * 2
                 }) for line in order.order_lines
             ]
         }]
